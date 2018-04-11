@@ -1,0 +1,10 @@
+</br>
+<%=link_to "All Posts", root_path%>
+<%= link_to "New Posts", posts_new_path%>
+
+
+<h3><%= @post.title %></h3>
+<p><%= @post.content %></p>
+
+<%= link_to "upvote", upvote_path(@post.id)%>
+<%= link_to "downvote", downvote_path(@post.id)%>

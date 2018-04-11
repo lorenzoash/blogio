@@ -2,17 +2,24 @@
 
 <%= link_to "New Post", posts_new_path %>
 
+
+<center>
+<h2>All Posts</h2>
+</center>
+
 <table>
 <tbody>
 <tr>
     <th>Post Title</th>
     <th>Upvotes</th>
+    <th>Downvotes</th>
     <th>Date Published</th>
     </tr>
 <% @posts.each do |post| %>
 <tr>
-    <td><%= post.title %></td>
+    <td><%= link_to(post.title, post_path(post))%> </td>
     <td><%= post.upvotes %></td>
+    <td><%= post.downvotes %></td>
     <td><%= post.created_at %></td>
 </tr>
 <% end %>
